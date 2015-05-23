@@ -1,7 +1,9 @@
 class TransifexException(Exception):
     pass
 
+
 class TransifexAPIException(TransifexException):
+
     def __init__(self, response=None):
         super(TransifexAPIException, self).__init__(response)
         self.response = response
@@ -12,6 +14,7 @@ class TransifexAPIException(TransifexException):
         return '%s: %s' % (
             self.response.status_code, self.response.content
             )
+
 
 class InvalidSlugException(TransifexException):
     pass
